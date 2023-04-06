@@ -2,7 +2,7 @@ import ListGroup from "./components/ListGroup"
 import React, { useState, useEffect } from "react";
 
 function App() {
-  let [apiResponse, setApiResponse] = useState("")
+  let [apiResponse, setApiResponse] = useState("{}")
     
   useEffect(() => {
     async function fetchData() {
@@ -20,7 +20,7 @@ function App() {
     event.preventDefault();  
   }
 
-  return <div><ListGroup items={[apiResponse]}/></div>;
+  return <div><ListGroup items={apiResponse}/></div>;
 }
 
 

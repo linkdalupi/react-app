@@ -1,28 +1,29 @@
 import { MouseEvent } from "react"
 
 interface MyProps {
-    items: string[],
+    items: string,
 }
 function ListGroup(props: MyProps) {
     
   let selectedIndex = 0
   const handleClick = (event: MouseEvent) => console.log(event)
-
+  let recipes = JSON.parse(props.items)
+   
   return (
-    <>
+    <div>
         <h1>Recipes list</h1>
-        {props.items.length === 0 && <p>No item found</p>}
+        {recipes.length === 0 && <p>No item found</p>}
         <ul className="list-group">    
-          {props.items.map((item:any, index: any) => (    
-            <li className={ selectedIndex === index ? 'list-group-item' : 'list-group-item'}
-                key={item} 
-                onClick={handleClick}>
-
-                {item} 
-            </li>
-        ))}
+          {recipes.length > 0 && recipes.map((item:any, index: any) => {
+            return ( 
+              <li className={'list-group-item'}
+                  key={index} 
+                  onClick={handleClick}>
+                  {item.recipe} 
+              </li>
+          )})}
         </ul>
-    </>
+    </div>
   );
 }
 
