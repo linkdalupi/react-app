@@ -1,0 +1,46 @@
+TODO for Apr 5th 
+- change the listgroup to list 2 recipes instead of cities
+
+- understand hooks
+    https://programmingwithmosh.com/react/whats-new-in-react-react-hooks/
+
+
+- understand what fetch does
+    https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+- understand setState hook
+    https://www.freecodecamp.org/news/learn-react-usestate-hook-in-10-minutes/
+- understand useEffect
+    https://www.freecodecamp.org/news/react-useeffect-absolute-beginners/    
+- change listgroup to use the api, take code from react app to call API
++ pass down the list of cities to listgroup from app
+
+
+- make the API be dynamic based on the selected ingredients, but the recipes are still in the code
+- make it read data from database instead of lambda code
+- upload recipes
+- make it pretty
+
+
+
+
+
+TODO for Feb 12th 
+- we need to add dynamic behavior to our website
+- we want the smallest increment of functionality
+- lambda function
+    input - list of ingredients
+    output - a recipe that is in the system and uses only the specified ingredients
+- simple solution
+    lambda can output one recipe always that is not in the database
+
+TODO for Feb 6th
+- upload to aws our current local version
+- from main page be able to go to a recipe page (from the recipe table)
+- upload again latest version
+- update site blog about checkbox
+- also update about syncing local version webpage to public internet.
+
+TODO  for Mar 19th
+- understand react: how is it different than static html, how to create a component
+- create a react component for the ingredients table and use it in my-app
+
