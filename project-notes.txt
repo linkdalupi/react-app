@@ -4,7 +4,6 @@ TODO for Apr 5th
 - understand hooks
     https://programmingwithmosh.com/react/whats-new-in-react-react-hooks/
 
-
 - understand what fetch does
     https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 - understand setState hook
@@ -12,7 +11,7 @@ TODO for Apr 5th
 - understand useEffect
     https://www.freecodecamp.org/news/react-useeffect-absolute-beginners/    
 - change listgroup to use the api, take code from react app to call API
-+ pass down the list of cities to listgroup from app
+- pass down the list of cities to listgroup from app
 
 
 - make the API be dynamic based on the selected ingredients, but the recipes are still in the code
