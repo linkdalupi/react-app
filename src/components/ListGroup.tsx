@@ -1,25 +1,25 @@
-import { Fragment } from "react";
-function ListGroup() {
-    let items = [
-        'New York',
-        'San Francisco',
-        'Tokyo',
-        'London',
-        'Paris',
+import { MouseEvent } from "react"
 
-    ]
-items = []
-
-const getMessage = () => {
-    return items.length === 0 ? <p>No item found</p> : null
+interface MyProps {
+    items: string[],
 }
+function ListGroup(props: MyProps) {
+    
+  let selectedIndex = 0
+  const handleClick = (event: MouseEvent) => console.log(event)
+
   return (
     <>
-        <h1>List</h1>
-        {getMessage()}
+        <h1>Recipes list</h1>
+        {props.items.length === 0 && <p>No item found</p>}
         <ul className="list-group">    
-          {items.map(item => (
-            <li key={item}>{item} </li>
+          {props.items.map((item:any, index: any) => (    
+            <li className={ selectedIndex === index ? 'list-group-item' : 'list-group-item'}
+                key={item} 
+                onClick={handleClick}>
+
+                {item} 
+            </li>
         ))}
         </ul>
     </>

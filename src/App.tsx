@@ -1,7 +1,15 @@
 import ListGroup from "./components/ListGroup"
 
 function App() {
-  return <div><ListGroup /></div>;
+  let items: string[] = [
+    'New York',
+    'San Francisco',
+    'Tokyo',
+    'London',
+    'Paris',
+  ]
+
+  return <div><ListGroup items={items}/></div>;
 }
 
 
