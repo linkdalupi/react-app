@@ -9,6 +9,12 @@ function App() {
   const handleChange = (event: any) => {
     setIngredient(event.target.id);
   }
+  
+  function handleSubmit(event: any) {
+    setSubmitted(true)
+    fetchData(ingredient)
+    event.preventDefault();  
+  }
 
   async function fetchData(ingredient: string) {
     const response = await fetch(
@@ -17,12 +23,6 @@ function App() {
     );
     const recipe = await response.text();
     setApiResponse(recipe);
-  }
-  
-  function handleSubmit(event: any) {
-    setSubmitted(true)
-    fetchData(ingredient)
-    event.preventDefault();  
   }
 
   return (<form onSubmit={handleSubmit}>
