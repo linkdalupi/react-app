@@ -29,9 +29,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <label> rice</label>
+          <label> tomato</label>
           <input type="checkbox" id="tomato" name="tomato" value="tomato" onChange={handleChange}/>
-          <label> milk</label>
+          <label> flour</label>
           <input type="checkbox" id="flour" name="flour" value="flour" onChange={handleChange}/>
           <input type="submit" value="Submit"/>
         </div>
