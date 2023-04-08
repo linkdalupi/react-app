@@ -37,7 +37,7 @@ function App() {
         </div>
       </header>
     </div>
-    <div><ListGroup items={submitted ? apiResponse: "{}"}/></div>
+    <div>{submitted && (<ListGroup items={submitted ? apiResponse: "{}"}/>)}</div>
     </form>)
 }
 
