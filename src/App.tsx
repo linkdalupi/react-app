@@ -33,7 +33,7 @@ function App() {
           <input type="checkbox" id="tomato" name="tomato" value="tomato" onChange={handleChange}/>
           <label> flour</label>
           <input type="checkbox" id="flour" name="flour" value="flour" onChange={handleChange}/>
-          <input type="submit" value="Submit"/>
+          <input type="submit" value="Find recipes"/>
         </div>
       </header>
     </div>
