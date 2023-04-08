@@ -2,9 +2,14 @@ import ListGroup from "./components/ListGroup"
 import React, { useState, useEffect } from "react";
 
 function App() {
-  let [apiResponse, setApiResponse] = useState("{}")
-  let [submitted, setSubmitted] = useState(false)
-    
+  const [apiResponse, setApiResponse] = useState("{}")
+  const [submitted, setSubmitted] = useState(false)
+  const [ingredient, setIngredient] = useState("");
+
+  const handleChange = (event: any) => {
+    setIngredient(event.target.id);
+  }
+
   async function fetchData(ingredient: string) {
     const response = await fetch(
       "https://19o9wqa834.execute-api.us-west-1.amazonaws.com/?ingredient="+ingredient,
@@ -16,7 +21,7 @@ function App() {
   
   function handleSubmit(event: any) {
     setSubmitted(true)
-    fetchData("tomato")
+    fetchData(ingredient)
     event.preventDefault();  
   }
 
@@ -25,9 +30,9 @@ function App() {
       <header className="App-header">
         <div>
           <label> rice</label>
-          <input type="checkbox" id="ingredient2" name="ingredient2" value="tomato"/>
+          <input type="checkbox" id="tomato" name="tomato" value="tomato" onChange={handleChange}/>
           <label> milk</label>
-          <input type="checkbox" id="ingredient3" name="ingredient3" value="flour"/>
+          <input type="checkbox" id="flour" name="flour" value="flour" onChange={handleChange}/>
           <input type="submit" value="Submit"/>
         </div>
       </header>
