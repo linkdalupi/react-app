@@ -1,13 +1,27 @@
 export const handler = async(event) => {
     
     let message;
-    if (event.queryStringParameters.ingredient === "tomato") {
+    const ingredients = event.queryStringParameters.ingredients.split(',')
+    console.log(ingredients)
+    if (ingredients.includes("eggs") && 
+        ingredients.includes("cheese") &&
+        ingredients.includes("spinach") &&
+        ingredients.includes("garlic_powder") &&
+        ingredients.includes("butter")) {
         message = [
-            {"recipe": "Tomato Pasta"}
+            {"recipe": "Omellete"}
+        ]
+    } else if (ingredients.includes("beef") && 
+    ingredients.includes("rice") &&
+    ingredients.includes("guacamole") &&
+    ingredients.includes("pita_bread") &&
+    ingredients.includes("lemon")) {
+        message = [
+            {"recipe": "Tacos"}
         ]
     } else {
         message = [
-            {"recipe": "Cupcakes"}
+            {"recipe": "Could not find a recipe"}
         ]
     }
     
