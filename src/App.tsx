@@ -1,5 +1,6 @@
 import ListGroup from "./components/ListGroup"
 import React, { useState, useEffect } from "react";
+import "./App.css"
 
 function App() {
   const [apiResponse, setApiResponse] = useState("{}")
@@ -25,7 +26,6 @@ function App() {
   }
 
   async function fetchData(ingredientList: string[]) {
-    console.log(ingredientList)
     const response = await fetch(
       "https://19o9wqa834.execute-api.us-west-1.amazonaws.com/?ingredients=" + 
       ingredientList.toString(),
@@ -39,28 +39,28 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <label> eggs</label>
+          <label className="ingredient"> eggs</label>
           <input type="checkbox" id="eggs" value="eggs" onChange={handleChange}/>
-          <label> cheese</label>
+          <label className="ingredient"> cheese</label>
           <input type="checkbox" id="cheese" value="cheese" onChange={handleChange}/>
-          <label> spinach</label>
+          <label className="ingredient"> spinach</label>
           <input type="checkbox" id="spinach" value="spinach" onChange={handleChange}/>
-          <label> garlic powder</label>
+          <label className="ingredient"> garlic powder</label>
           <input type="checkbox" id="garlic_powder" value="garlic powder" onChange={handleChange}/>
-          <label> butter</label>
+          <label className="ingredient"> butter</label>
           <input type="checkbox" id="butter" value="butter" onChange={handleChange}/>
-          <label> beef</label>
+          <label className="ingredient"> beef</label>
           <input type="checkbox" id="beef" value="beef" onChange={handleChange}/>
-          <label> rice</label>
+          <label className="ingredient"> rice</label>
           <input type="checkbox" id="rice" value="rice" onChange={handleChange}/>
-          <label> guacamole</label>
+          <label className="ingredient"> guacamole</label>
           <input type="checkbox" id="guacamole" value="guacamole" onChange={handleChange}/>
-          <label> pita bread</label>
+          <label className="ingredient"> pita bread</label>
           <input type="checkbox" id="pita_bread" value="pita bread" onChange={handleChange}/>
-          <label> lemon</label>
+          <label className="ingredient"> lemon</label>
           <input type="checkbox" id="lemon" value="lemon" onChange={handleChange}/>
 
-          <input type="submit" value="Find recipes"/>
+          <input className="ingredient" type="submit" value="Find recipes"/>
         
         </div>
       </header>
