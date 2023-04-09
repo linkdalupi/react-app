@@ -7,8 +7,15 @@ function App() {
   const [ingredientList, setIngredientList] = useState<string[]>([]);
 
   const handleChange = (event: any) => {
-    const newIngredients = [...ingredientList, event.target.id]
-    setIngredientList(newIngredients);
+    if (event.target.checked) {
+      const newIngredients = [...ingredientList, event.target.id]
+      setIngredientList(newIngredients);
+    } else {
+      const index = ingredientList.indexOf(event.target.id);
+      if (index > -1) { 
+        ingredientList.splice(index, 1); 
+      }
+    }
   }
   
   function handleSubmit(event: any) {``
