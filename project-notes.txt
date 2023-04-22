@@ -1,3 +1,14 @@
+TODO for Apr 22nd
+- add all ingredients to the page from the recipes we want to have
+- change lambda to know about all the recipes - change from if statements to something better
+- deploy to aws
+- test that it works on facefood.link
+- optionally test in on a phone and make it nice
+- make the page look better 
+    alignment of checkboxes
+    grouping maybe
+
+
 TODO for Apr 5th 
 - change the listgroup to list 2 recipes instead of cities
 
@@ -18,10 +29,6 @@ TODO for Apr 5th
 - make it read data from database instead of lambda code
 - upload recipes
 - make it pretty
-
-
-
-
 
 TODO for Feb 12th 
 - we need to add dynamic behavior to our website

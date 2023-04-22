@@ -1,23 +1,27 @@
 export const handler = async(event) => {
     
+    /*
+    recipe list: [[recipe1], [recipe2], [recipe3]]
+    recipe: name, description, [ingredient1, ingredient2, ...]
+    */
+
+    const recipes = [
+        {name: "omelette", description: "break the eggs", ingredients: ["eggs", "cheese", "spinach", "garlic_powder", "butter"]},
+        {name: "tacos", description: "fry and spread", ingredients: ["beef", "rice", "guacamole", "pita_bread", "lemon"]}
+    ]
+
     let message;
-    const ingredients = event.queryStringParameters.ingredients.split(',')
-    console.log(ingredients)
-    if (ingredients.includes("eggs") && 
-        ingredients.includes("cheese") &&
-        ingredients.includes("spinach") &&
-        ingredients.includes("garlic_powder") &&
-        ingredients.includes("butter")) {
+    const ingredientsInRequest = event.queryStringParameters.ingredients.split(',')
+    console.log(ingredientsInRequest)
+    
+    let result = recipes.filter(recipe => {
+        let ingredientsInRecipe = recipe.ingredients
+        return (JSON.stringify(ingredientsInRequest) == JSON.stringify(ingredientsInRecipe))
+    })
+    
+    if (result.length > 0) {
         message = [
-            {"recipe": "Omellete"}
-        ]
-    } else if (ingredients.includes("beef") && 
-    ingredients.includes("rice") &&
-    ingredients.includes("guacamole") &&
-    ingredients.includes("pita_bread") &&
-    ingredients.includes("lemon")) {
-        message = [
-            {"recipe": "Tacos"}
+            {"recipe": result[0].name + " - " + result[0].description}
         ]
     } else {
         message = [
