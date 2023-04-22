@@ -7,8 +7,11 @@ export const handler = async(event) => {
 
     const recipes = [
         {name: "omelette", description: "break the eggs", ingredients: ["eggs", "cheese", "spinach", "garlic_powder", "butter"]},
-        {name: "tacos", description: "fry and spread", ingredients: ["beef", "rice", "guacamole", "pita_bread", "lemon"]},
+        {name: "tacos", description: "cut meat and season", ingredients: ["beef", "rice", "guacamole", "pita_bread", "lemon"]},
         {name: "stuffed bell peppers", description: "stuff the peppers", ingredients: ["peppers", "pork", "rice", "tomatoh_sauce", "onion"]},
+        {name: "chicken noodle soup", description: "add noodles to soup", ingredients: ["noodles", "chicken", "peppers", "carrot", "onion"]},
+        {name: "schnitzel", description: "fry meat", ingredients: ["bread_crumbs", "chicken", "eggs", "olive_oil"]},
+        
     ] 
 
     let message;
