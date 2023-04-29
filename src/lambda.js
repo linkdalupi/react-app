@@ -19,11 +19,13 @@ export const handler = async(event) => {
 
     let message;
     const ingredientsInRequest = event.queryStringParameters.ingredients.split(',')
-    console.log(ingredientsInRequest)
+    console.log("request:", ingredientsInRequest)
     
     let result = recipes.filter(recipe => {
         let ingredientsInRecipe = recipe.ingredients
-        return (JSON.stringify(ingredientsInRequest.sort()) == JSON.stringify(ingredientsInRecipe.sort()))
+        return ingredientsInRecipe.every(ingredient => {
+            return ingredientsInRequest.includes(ingredient)
+        })
     })
     
     if (result.length > 0) {
