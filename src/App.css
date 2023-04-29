@@ -1,3 +1,7 @@
 .ingredient { 
     display:block 
 }
+
+body {
+    overscroll-behavior: contain;
+}
