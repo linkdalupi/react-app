@@ -29,9 +29,9 @@ export const handler = async(event) => {
     })
     
     if (result.length > 0) {
-        message = [
-            {"recipe": result[0].name + " - " + result[0].description}
-        ]
+        message = result.map(recipe => {
+            return {"recipe": recipe.name + " - " + recipe.description}
+        })
     } else {
         message = [
             {"recipe": "Could not find a recipe"}
