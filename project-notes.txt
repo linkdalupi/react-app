@@ -2,6 +2,7 @@ TODO for Apr 29th
 - change behavior to work if more ingredients than necessary
 - make it return all recipes
 - on phone it should not refresh when scrolling
+- make tiles for ingredients, use image, arrange in grid, title on the top
 - open separate page when looking for recipes
 - make it pretty
 
