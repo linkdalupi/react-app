@@ -8,6 +8,7 @@ function App() {
   const [apiResponse, setApiResponse] = useState("{}")
   const [submitted, setSubmitted] = useState(false)
   const [ingredientList, setIngredientList] = useState<string[]>([]);
+  
 
   const handleSelectChange = (event: any) => {
     setIngredientList(event.map((selection: any) => {return selection.value}))
@@ -27,6 +28,7 @@ function App() {
     );
     const recipe = await response.text();
     setApiResponse(recipe);
+    console.log('/public/' + JSON.parse(apiResponse)[0].recipe.split('-')[0].trim() + '.jpg')
   }
 
   const options = [
@@ -65,6 +67,8 @@ function App() {
       </header>
     </div>
     <div>{submitted && (<ListGroup items={submitted ? apiResponse: "{}"}/>)}</div>
+    <div>{JSON.parse(apiResponse).length > 0 && <img src={'/public/' + JSON.parse(apiResponse)[0].recipe.split('-')[0].trim() + '.jpg'}/>}</div>
+   
     </form>)
 }
 
