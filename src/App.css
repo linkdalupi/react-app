@@ -5,3 +5,8 @@
 body {
     overscroll-behavior: contain;
 }
+
+img{
+    max-width:400px;
+    max-height:400px;
+}
