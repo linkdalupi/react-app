@@ -55,6 +55,7 @@ function App() {
     { value: 'paprika', label: 'Paprika' },
     { value: 'pizza_dough', label: 'Pizza Dough' },
     { value: 'yeast', label: 'Yeast' },
+    { value: 'milk', label: 'Milk'},
   ]
     
   return (<form onSubmit={handleSubmit}>
